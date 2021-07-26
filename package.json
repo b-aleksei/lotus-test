@@ -50,9 +50,5 @@
     "stylelint-config-standard": "^21.0.0",
     "webpack": "^4.42.0",
     "webpack-stream": "^5.2.1"
-  },
-  "dependencies": {
-    "alpinejs": "^3.2.2",
-    "focus-visible": "^5.2.0"
   }
 }
