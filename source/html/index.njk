@@ -1,0 +1,32 @@
+{% extends "base/layout.njk" %}
+{% set title = 'Пост компонент' %}
+
+
+{% block main %}
+  <div
+    class="ls-post-comp"
+    x-data="post"
+    x-init="posts = await (await fetch(url)).json()"
+  >
+    <ul class="ls-post-comp__list">
+      <template x-for="post in showPosts">
+        <li class="ls-post-comp__item">
+          <p>User: <span x-text="post.id"></span></p>
+          <b x-text="post.title"></b>
+          <p x-text="post.body"></p>
+        </li>
+      </template>
+    </ul>
+    <button
+      class="ls-post-comp__btn-loader"
+      @click="addPosts"
+      type="button"
+    >Показать еще 10 постов</button>
+  </div>
+{% endblock %}
+
+
+{% block scripts %}
+  {{ super() }}
+  <script src="js/main.min.js"></script>
+{% endblock %}
